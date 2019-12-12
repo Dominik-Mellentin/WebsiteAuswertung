@@ -16,6 +16,14 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
-        
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="50">
+            <Button Content="Button 1"></Button>
+            <Button Content="Button 2" Margin="0,20,0,0"></Button>
+            <Button Content="Button 3" Margin="0,20,0,0"></Button>
+            <Button Content="Button 4" Margin="0,20,0,0"></Button>
+        </StackPanel>
+        <Grid Margin="300,0,0,0">
+            <ScottPlot:WpfPlot></ScottPlot:WpfPlot>
+        </Grid>
     </Grid>
 </Window>
