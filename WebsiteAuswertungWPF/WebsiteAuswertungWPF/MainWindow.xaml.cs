@@ -20,18 +20,20 @@ namespace WebsiteAuswertungWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        internal File_Convert Files = new File_Convert();
+        internal IOC ioc = new IOC();
         public MainWindow()
         {
             InitializeComponent();
+            ioc.DB.Start_DB_Connection();
         }
 
         private void ImagePanel_Drop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
+            { 
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-                Files.Files(files[0]);
+                ioc.Files.Files(files[0]);
+                ioc.Sort.Sort();
             }
         }
     }

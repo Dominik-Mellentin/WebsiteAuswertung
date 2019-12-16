@@ -73,7 +73,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="db_Connection.cs" />
+    <Compile Include="Domain.cs" />
+    <Compile Include="DomainSort.cs" />
     <Compile Include="File_Convert.cs" />
+    <Compile Include="IOC.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

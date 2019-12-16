@@ -7,9 +7,10 @@ using System.IO;
 
 namespace WebsiteAuswertungWPF
 {
-    class File_Convert
+    internal class File_Convert
     {
         string[] Filetype;
+        internal List<string> Resultlist = new List<string>();
         public void Files(string Files)
         {
             Filetype = Files.Split('.');
@@ -19,7 +20,7 @@ namespace WebsiteAuswertungWPF
                 string[] lines = File.ReadAllLines(Files, Encoding.UTF8);
                 foreach(string line in lines)
                 {
-                    Encode(line);
+                    Resultlist.Add(Encode(line));
                 }
             }
             else
@@ -28,7 +29,7 @@ namespace WebsiteAuswertungWPF
             }
         }
 
-        public void Encode(string File_Line)
+        public string Encode(string File_Line)
         {
             string[] Split;
             string Result;
@@ -40,8 +41,9 @@ namespace WebsiteAuswertungWPF
             Split = File_Line.Split('?');
             Split = Split[1].Split('(');
             Result += Split[0];
-            Result = Result.Remove(Result.Length - 1);
+            Result = Result.Remove(Result.Length - 2);
             Console.WriteLine(Result);
+            return Result;
         }
     }
 }
