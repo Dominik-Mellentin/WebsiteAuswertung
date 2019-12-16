@@ -19,8 +19,11 @@
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="50">
             <Button Content="Button 1"></Button>
             <Button Content="Button 2" Margin="0,20,0,0"></Button>
-            <Button Content="Button 3" Margin="0,20,0,0"></Button>
-            <Button Content="Button 4" Margin="0,20,0,0"></Button>
+            <Grid Height="150" Width="150" Margin="0 20 0 0">
+                <Border BorderBrush="Black" BorderThickness="1">
+                    <materialDesign:PackIcon Kind="File" Height="149" Margin="0,0,-1,-1" Width="149"></materialDesign:PackIcon>
+                </Border>
+            </Grid>
         </StackPanel>
         <Grid Margin="300,10,10,10">
             <ScottPlot:WpfPlot></ScottPlot:WpfPlot>
