@@ -21,7 +21,7 @@
             <Button Content="Button 2" Margin="0,20,0,0"></Button>
             <Grid Height="150" Width="150" Margin="0 20 0 0">
                 <Border BorderBrush="Black" BorderThickness="1">
-                    <materialDesign:PackIcon Kind="File" Height="149" Margin="0,0,-1,-1" Width="149"></materialDesign:PackIcon>
+                    <materialDesign:PackIcon Kind="File" Height="149" Margin="0,0,-1,-1" Width="149" Drop="ImagePanel_Drop" AllowDrop="true"></materialDesign:PackIcon>
                 </Border>
             </Grid>
         </StackPanel>
