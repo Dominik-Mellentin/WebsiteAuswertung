@@ -22,15 +22,15 @@ namespace WebsiteAuswertungWPF
                 bool gibtesinlist = false;
                 string[] splitstring;
                 splitstring = line.Split(' ');
-                foreach (Domain d in domains)
+                for (int i = 0; i < domains.Count; i++)
                 {
                     warinforeach = true;
-                    if (d.Name == splitstring[2])
+                    if (domains[i].Name == splitstring[2])
                     {
                         gibtesinlist = true;
-                        d.Count++;
+                        domains[i].Count++;
                     }
-                    else if (d.Name != splitstring[2] && gibtesinlist == false)
+                    else if (domains[i].Name != splitstring[2] && gibtesinlist == false)
                     {
                         domains.Add(new Domain(splitstring[2]));
                     }
