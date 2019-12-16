@@ -18,6 +18,7 @@ namespace WebsiteAuswertungWPF
 
         public void Start_DB_Connection()
         {
+            //ConnectionString Updaten
             Connection_String = "Data Source=(local);Initial Catalog=DB_Lagerverwaltung;Integrated Security=True";
             sqlconnection = new SqlConnection(Connection_String);
 
