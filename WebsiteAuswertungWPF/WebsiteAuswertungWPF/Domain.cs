@@ -26,6 +26,7 @@ namespace WebsiteAuswertungWPF
         public Domain(string n)
         {
             this.name = n;
+            this.Count = 1;
         }
 
     }

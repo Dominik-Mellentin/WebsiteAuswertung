@@ -24,7 +24,7 @@ namespace WebsiteAuswertungWPF
         public MainWindow()
         {
             InitializeComponent();
-            ioc.DB.Start_DB_Connection();
+            //ioc.DB.Start_DB_Connection();
         }
 
         private void ImagePanel_Drop(object sender, DragEventArgs e)

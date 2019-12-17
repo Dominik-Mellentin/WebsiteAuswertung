@@ -9,6 +9,7 @@ namespace WebsiteAuswertungWPF
     class DomainSort
     {
         internal IOC ioc;
+        int i = 0;
         public DomainSort(IOC ioc)
         {
             this.ioc = ioc;
@@ -16,33 +17,29 @@ namespace WebsiteAuswertungWPF
         public void Sort()
         {
             List<Domain> domains = new List<Domain>();
+            bool List_is_run = false;
+            string[] String_Split;
+
             foreach (string line in ioc.Files.Resultlist)
             {
-                bool warinforeach = false;
-                bool gibtesinlist = false;
-                string[] splitstring;
-                splitstring = line.Split(' ');
+                List_is_run = false;
+                String_Split = line.Split(' ');
                 for (int i = 0; i < domains.Count; i++)
                 {
-                    warinforeach = true;
-                    if (domains[i].Name == splitstring[2])
+                    if(domains[i].Name == String_Split[2])
                     {
-                        gibtesinlist = true;
                         domains[i].Count++;
-                    }
-                    else if (domains[i].Name != splitstring[2] && gibtesinlist == false)
-                    {
-                        domains.Add(new Domain(splitstring[2]));
+                        List_is_run = true;
                     }
                 }
-                if (warinforeach == false)
+                if(List_is_run == false)
                 {
-                    domains.Add(new Domain(splitstring[2]));
+                    domains.Add(new Domain(String_Split[2]));
                 }
             }
-            foreach(Domain d in domains)
+            foreach (Domain domain in domains)
             {
-                Console.WriteLine(d.Name + " " + d.Count);
+                Console.WriteLine(domain.Name + domain.Count);
             }
         }
     }
