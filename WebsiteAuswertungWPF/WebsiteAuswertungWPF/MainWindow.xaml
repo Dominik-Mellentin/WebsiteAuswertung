@@ -27,7 +27,7 @@
             </Grid>
         </StackPanel>
         <Grid Margin="300,10,10,10">
-            <ScottPlot:WpfPlot></ScottPlot:WpfPlot>
+            <ScottPlot:WpfPlot x:Name="plt_Auswertung"></ScottPlot:WpfPlot>
         </Grid>
     </Grid>
 </Window>
