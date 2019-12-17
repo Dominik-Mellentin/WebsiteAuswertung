@@ -18,7 +18,7 @@
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="50">
             <Button Content="Button 1"></Button>
-            <Button Content="Button 2" Margin="0,20,0,0"></Button>
+            <Button Name="btn_DB" Content="Insert Into Database" Margin="0,20,0,0" Click="Button_Click" IsEnabled="False"></Button>
             <Grid Height="150" Width="150" Margin="0 20 0 0">
                 <Border BorderBrush="Black" BorderThickness="1">
                     <materialDesign:PackIcon Kind="File" Height="149" Margin="0,0,-1,-1" Width="149" Drop="ImagePanel_Drop" AllowDrop="true"></materialDesign:PackIcon>

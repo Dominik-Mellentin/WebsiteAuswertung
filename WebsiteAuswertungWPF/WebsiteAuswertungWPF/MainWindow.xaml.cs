@@ -24,7 +24,7 @@ namespace WebsiteAuswertungWPF
         public MainWindow()
         {
             InitializeComponent();
-            //ioc.DB.Start_DB_Connection();
+            ioc.DB.Start_DB_Connection();
         }
 
         private void ImagePanel_Drop(object sender, DragEventArgs e)
@@ -34,7 +34,13 @@ namespace WebsiteAuswertungWPF
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
                 ioc.Files.Files(files[0]);
                 ioc.Sort.Sort();
+                btn_DB.IsEnabled = true;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ioc.Insert_DB();
         }
     }
 }
