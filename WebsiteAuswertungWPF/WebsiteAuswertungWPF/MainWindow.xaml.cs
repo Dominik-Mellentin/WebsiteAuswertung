@@ -33,7 +33,6 @@ namespace WebsiteAuswertungWPF
             { 
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
                 ioc.Files.Files(files[0]);
-                ioc.Sort.Sort();
                 btn_DB.IsEnabled = true;
             }
         }
@@ -45,7 +44,13 @@ namespace WebsiteAuswertungWPF
 
         private void btn_Stats_Click(object sender, RoutedEventArgs e)
         {
+            ioc.Sort.Sort();
             ioc.Top();
+        }
+
+        private void btn_DB_Load_Click(object sender, RoutedEventArgs e)
+        {
+            ioc.LoadData();
         }
     }
 }
