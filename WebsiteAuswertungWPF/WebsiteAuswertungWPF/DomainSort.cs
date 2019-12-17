@@ -10,13 +10,14 @@ namespace WebsiteAuswertungWPF
     {
         internal IOC ioc;
         int i = 0;
+        public List<Domain> domains = new List<Domain>();
         public DomainSort(IOC ioc)
         {
             this.ioc = ioc;
         }
         public void Sort()
         {
-            List<Domain> domains = new List<Domain>();
+            
             bool List_is_run = false;
             string[] String_Split;
 

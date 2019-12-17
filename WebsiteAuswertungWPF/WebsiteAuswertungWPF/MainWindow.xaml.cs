@@ -42,5 +42,10 @@ namespace WebsiteAuswertungWPF
         {
             ioc.Insert_DB();
         }
+
+        private void btn_Stats_Click(object sender, RoutedEventArgs e)
+        {
+            ioc.Top();
+        }
     }
 }

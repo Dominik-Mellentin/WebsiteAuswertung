@@ -27,5 +27,20 @@ namespace WebsiteAuswertungWPF
                 DB.DB_Insert("INSERT INTO Website(Zeit,Sender,Empfaenger)VALUES(\'" + String_Split[0] + "\'," + "\'" + String_Split[1] + "\'," + "\'" + String_Split[2] + "\')");
             }
         }
+
+        public void Top()
+        {
+            int x = 10;
+            Sort.domains.OrderBy(o => o.Count).ToList();
+
+            if(Sort.domains.Count < 10)
+            {
+                x = Sort.domains.Count;
+            }
+            for(int i = 0; i < x; i++)
+            {
+                Console.WriteLine(Sort.domains[i].Name + Sort.domains[i].Count);
+            }
+        }
     }
 }

@@ -17,7 +17,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="50">
-            <Button Content="Button 1"></Button>
+            <Button Name="btn_Stats" Content="Stats from Database" Click="btn_Stats_Click"></Button>
             <Button Name="btn_DB" Content="Insert Into Database" Margin="0,20,0,0" Click="Button_Click" IsEnabled="False"></Button>
             <Grid Height="150" Width="150" Margin="0 20 0 0">
                 <Border BorderBrush="Black" BorderThickness="1">
