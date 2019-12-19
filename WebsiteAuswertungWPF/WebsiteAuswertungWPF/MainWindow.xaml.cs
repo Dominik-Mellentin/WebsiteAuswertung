@@ -52,12 +52,12 @@ namespace WebsiteAuswertungWPF
             {
                 for (int i = 0; i < 10; i++)
                 {
+                    Console.WriteLine("Test " + i);
                     x[i] += i * 10;
                     y[i] += ioc.Sort.domains[i].Count;
-                    Console.WriteLine("Test " + i);
                 }
-                string[] labels = { ioc.Sort.domains[0].Name, ioc.Sort.domains[1].Name, ioc.Sort.domains[2].Name, ioc.Sort.domains[3].Name, ioc.Sort.domains[4].Name, ioc.Sort.domains[5].Name, ioc.Sort.domains[6].Name, ioc.Sort.domains[7].Name, ioc.Sort.domains[8].Name, ioc.Sort.domains[9].Name };
-                plt_Auswertung.plt.PlotBar(x, y);
+                plt_Auswertung.plt.PlotBar(x, y, label: "Funktionier endlich");
+                plt_Auswertung.plt.Legend();
                 plt_Auswertung.Render();
             }
         }
