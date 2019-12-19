@@ -13,6 +13,7 @@ namespace WebsiteAuswertungWPF
         internal File_Convert Files = new File_Convert();
         internal db_Connection DB = new db_Connection();
         internal DomainSort Sort;
+        internal List<string> db_results = new List<string>();
 
         DataTable Dt = new DataTable();
         public IOC()
@@ -49,15 +50,38 @@ namespace WebsiteAuswertungWPF
         {
             foreach (DataRow row in Datatable.Rows)
             {
-                Console.WriteLine(row[1] + " " + row[2] + " " + row[3]);
-                Files.Resultlist.Add(row[1] + " " + row[2] + " " + row[3]);
+                Console.WriteLine(row[0]);
+                db_results.Add(row[0].ToString());
             }
         }
 
         public void LoadData()
         {
-            Dt = DB.SQL_Command("SELECT * FROM Website");
+            Dt = DB.SQL_Command("SELECT Empfaenger FROM Website");
             DataTable_To_List(Dt);
+            
+            bool List_is_run = false;
+
+            foreach (string s in db_results)
+            {
+                List_is_run = false;
+                for (int i = 0; i < Sort.domains.Count; i++)
+                {
+                    if (Sort.domains[i].Name == s)
+                    {
+                        Sort.domains[i].Count++;
+                        List_is_run = true;
+                    }
+                }
+                if (List_is_run == false)
+                {
+                    Sort.domains.Add(new Domain(s));
+                }
+            }
+            foreach (Domain domain in Sort.domains)
+            {
+                Console.WriteLine(domain.Name + domain.Count);
+            }
         }
     }
 }
